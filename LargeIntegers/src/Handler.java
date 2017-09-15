@@ -19,13 +19,24 @@ public class Handler {
 	public int[] addComplex(int[] a, int[] b) {
 		int[] result = new int[size];
 	
-		for(int i = size; i > 0; i --) {
+		for(int i = size-1; i >= 0; i --) {
 			if (a[i] + b[i] < 10)
 				result[i] = a[i] + b[i];
-			else //need to carry
-				result[i-1] ++;
-				result[i] = result[i]%10;
+			else { //need to carry
+				//TODO if first digit is >9, create new [12,3,4,5,6,7] --> [1,2,3,4,5,6,7,] 
+				int[] fatResult = new int[size+1];
+				fatResult[0] = 1;
+				
+				for(int j = 1; j < size+1; j++) {
+					fatResult[j] = result[j];
+				}
+			
+				//THIS IS WRONG
+				fatResult[i] ++;
+				fatResult[i] = fatResult[i]%10;
+			}
 		}
+		
 		return result;
 	}
 }

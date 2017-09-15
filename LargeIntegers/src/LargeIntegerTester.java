@@ -20,9 +20,7 @@ public class LargeIntegerTester {
 			System.out.println("Complex Addition Position: " + i + " = " + addEmUp.addComplex(x,  y)[i]);
 		}
 		
-		//DISHES
-		//CHARLIE 5:30-7 
-		//CHARLIE 7 @ ST.Louis
+		
 
 	}
 
